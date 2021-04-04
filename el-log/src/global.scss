@@ -1,0 +1,350 @@
+    /*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+    /* Core CSS required for Ionic components to work properly */
+    
+    @import "~@ionic/angular/css/core.css";
+    /* Basic CSS for apps built with Ionic */
+    
+    @import "~@ionic/angular/css/normalize.css";
+    @import "~@ionic/angular/css/structure.css";
+    @import "~@ionic/angular/css/typography.css";
+    @import '~@ionic/angular/css/display.css';
+    /* Optional CSS utils that can be commented out */
+    
+    @import "~@ionic/angular/css/padding.css";
+    @import "~@ionic/angular/css/float-elements.css";
+    @import "~@ionic/angular/css/text-alignment.css";
+    @import "~@ionic/angular/css/text-transformation.css";
+    @import "~@ionic/angular/css/flex-utils.css";
+    @font-face {
+        font-family: 'Agrandir';
+        font-style: normal;
+        font-weight: normal;
+        src: url('./assets/fonts/Agrandir-Regular.otf');
+    }
+    
+    @font-face {
+        font-family: 'Agrandir-GrandHeavy';
+        font-style: normal;
+        font-weight: bold;
+        src: url('./assets/fonts/Agrandir-GrandHeavy.otf');
+    }
+    
+    @font-face {
+        font-family: 'Agrandir-WideLight';
+        font-style: normal;
+        font-weight: bold;
+        src: url('./assets/fonts/Agrandir-WideLight.otf');
+    }
+    
+    @font-face {
+        font-family: 'FiraMono';
+        font-style: normal;
+        font-weight: normal;
+        src: url('./assets/fonts/FiraMono-Regular.ttf');
+    }
+    
+    @font-face {
+        font-family: 'FiraMono';
+        font-style: normal;
+        font-weight: bold;
+        src: url('./assets/fonts/FiraMono-Bold.ttf');
+    }
+    
+    ion-content {
+        --background: #000;
+        --padding-start: 30px;
+        --padding-end: 30px;
+    }
+    /* HEADER */
+    
+    ion-header {
+        background-color: #000;
+        padding: 40px 0px 20px;
+        ion-toolbar {
+            --background: #000;
+            text-align: center;
+        }
+        ion-back-button {
+            ion-icon {
+                color: #50FFC5;
+                width: 14px;
+            }
+            .button-text {
+                display: none;
+            }
+        }
+    }
+    
+    app-header {
+        .header-logo {
+            width: 140px;
+        }
+        &.unauthenticated .peace-out {
+            display: none;
+        }
+    }
+    /* END HEADER */
+    /* TABS */
+    
+    ion-tab-bar {
+        --background: #000;
+        --background-focused: #000;
+        border-top: 1px #fff solid;
+        min-height: 95px;
+        ion-tab-button {
+            svg {
+                fill: #ffffff;
+                margin-bottom: 6px;
+            }
+            &.tab-selected svg {
+                fill: #50FFC5;
+            }
+            ion-label {
+                font-size: 17px !important;
+                font-family: 'Agrandir-WideLight' !important;
+                text-transform: lowercase !important;
+            }
+        }
+    }
+    /* END TABS */
+    
+    .fade-out {
+        width: 100%;
+        height: 180px;
+        position: absolute;
+        background: rgb(0, 0, 0);
+        background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        z-index: 20px;
+        bottom: 0px;
+        mix-blend-mode: multiply;
+        opacity: .75;
+    }
+    
+    h1,
+    h2,
+    p {
+        color: #fff;
+    }
+    
+    h1 {
+        font-family: 'Agrandir-WideLight';
+        text-transform: lowercase;
+        padding-bottom: 10px;
+    }
+    
+    h1.form-title {
+        font-family: 'Agrandir-WideLight';
+        text-transform: lowercase;
+    }
+    
+    .input-seperator {
+        padding-bottom: 20px;
+    }
+    
+    div.input-seperator#other-content {
+        display: none;
+        padding-bottom: 0px;
+    }
+    
+    h1.WPB {
+        padding-bottom: 30px;
+    }
+    
+    ion-label {
+        font-family: 'Agrandir-GrandHeavy' !important;
+        color: #fff;
+        display: block;
+        padding-bottom: 4px;
+        padding-top: 2px;
+    }
+    
+    ion-input {
+        --background: transparent;
+        --inner-border-width: 0px;
+        --color: #fff;
+        color: #fff;
+        --padding-start: 0px;
+        border: .5px solid #efefef;
+        min-height: 68px;
+        position: relative;
+        .sc-ion-label-ios-h,
+        .native-input,
+        input.sc-ion-input-ios,
+        .native-input.sc-ion-input-ios {
+            --placeholder-color: #ACACAC;
+            --placeholder-font-style: normal;
+            --placeholder-opacity: .8;
+            --placeholder-font-weight: normal;
+            font-family: 'FiraMono' !important;
+            font-weight: bold;
+            --padding-top: 16px;
+            --padding-end: 15px;
+            --padding-bottom: 18px;
+            --padding-start: 15px;
+            --color: #fff;
+            color: #fff;
+            font-size: 17px;
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 7px;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    
+    ion-item {
+        --background: transparent;
+        --inner-border-width: 0px;
+        --color: #fff;
+        --padding-start: 0px;
+        --background-activated: #000;
+        input.sc-ion-input-ios {
+            font-family: 'Agrandir-GrandHeavy' !important;
+            --placeholder-color: #fff;
+            --placeholder-opacity: 1;
+            color: #fff;
+        }
+        ion-radio {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #fff;
+            border-radius: 100px;
+            margin-left: 0px;
+            background-color: #fff;
+            &.radio-checked {
+                background-color: #000;
+                border: 5px solid #50FFC5;
+            }
+        }
+        &.activated {
+            background-color: #50FFC5;
+            --background: #50FFC5 !important;
+            --color: #50FFC5;
+        }
+    }
+    
+    .fira-p {
+        text-align: center;
+        font-family: 'FiraMono';
+        padding-top: 20px;
+        a {
+            display: block;
+        }
+        &.left-align {
+            text-align: left;
+        }
+        &.NPT {
+            padding-top: 0px;
+        }
+    }
+    
+    .other-p {
+        font-family: 'Agrandir-GrandHeavy' !important;
+        text-transform: lowercase;
+        margin-top: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .basic-btn {
+        width: 100%;
+        background-color: #50FFC5;
+        color: #000;
+        font-family: 'Agrandir-GrandHeavy' !important;
+        text-transform: lowercase;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        height: auto;
+        display: flex;
+        padding: 25px 20px;
+        .button-native {
+            .button-inner {
+                width: 100%;
+                --margin-inline-start: 0px;
+                --margin-inline-end: 0px;
+                --padding-end: 20px;
+                --padding-start: 20px;
+                --padding-top: 20px;
+                --padding-bottom: 20px;
+                padding: 30px !important;
+                padding-inline-start: 20px !important;
+                padding-inline-end: 20px !important;
+            }
+        }
+        &.WMT {
+            margin-top: 20px;
+        }
+    }
+    
+    ion-infinite-scroll {
+        overflow-y: scroll;
+        --color: #fff;
+        padding-right: 10px;
+        position: relative;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #000;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #50FFC5;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #50FFC5
+        }
+        .infinite-loading {
+            z-index: 22;
+            font-family: 'Agrandir-GrandHeavy' !important;
+        }
+    }
+    
+    .log-content {
+        text-align: left;
+        span {
+            display: block;
+            &.date {
+                font-family: 'FiraMono';
+                font-weight: bold;
+                color: #50FFC5;
+                padding-bottom: 4px;
+            }
+            &.song {
+                font-family: 'FiraMono';
+                font-weight: normal;
+            }
+        }
+    }
+    
+    .loge-holder {
+        width: 90%;
+        padding-top: 90%;
+        margin: 0 auto;
+        background-image: url('/assets/loge.png');
+        background-size: 210px;
+        background-position: center 80px;
+        background-repeat: no-repeat;
+        border-radius: 500px;
+        border: 1px solid #efefef6b;
+    }
+    
+    .large-mint-p {
+        font-size: 30px;
+        font-family: 'Agrandir-GrandHeavy';
+        color: #50FFC5;
+        text-align: center;
+    }

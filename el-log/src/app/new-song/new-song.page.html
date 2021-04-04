@@ -1,0 +1,34 @@
+<ion-content id="context-logsong-1">
+    <app-header></app-header>
+    <h1 class="form-title">
+        the artist: whomdst is it?
+    </h1>
+    <ion-radio-group #radioGroup (ionChange)="radioGroupChange($event)">
+        <ion-item>
+            <ion-radio value="Morgan Wallen" onclick="showOther(1)"></ion-radio>
+            <ion-label>morgan</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-radio value="Katy Perry" onclick="showOther(1)"></ion-radio>
+            <ion-label>katy</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-radio value="other" class="other" onclick="showOther(0)"></ion-radio>
+            <ion-label>other?!?!!</ion-label>
+        </ion-item>
+        <div class="input-seperator" id="other-content">
+            <p class="other-p">
+                Truly shocking. Good job listening to someone else. Write ‘em in.
+            </p>
+            <ion-input placeholder="give me the wretched name!" [(ngModel)]="name" id="artist-name"></ion-input>
+        </div>
+    </ion-radio-group>
+    <ion-button class="basic-btn WMT" (click)="setArtist()" routerLink="/new-song2" routerDirection="forward">
+        proceed
+    </ion-button>
+</ion-content>
+<!--<script>
+function radioGroupChange($event) {
+  history.pushState({data: {$event}}, '', '');
+}
+  </script>-->
