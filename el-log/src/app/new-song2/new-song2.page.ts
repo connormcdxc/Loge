@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+
 @Component({
   selector: 'app-new-song2',
   templateUrl: './new-song2.page.html',
@@ -7,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewSong2Page implements OnInit {
   data: any;
+  song: any;
+  complete: any;
   //constructor() { }
   constructor(private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
@@ -20,6 +23,19 @@ export class NewSong2Page implements OnInit {
       }
     });
   }
+
+  setSong() {
+        let navigationExtras: NavigationExtras = {
+          state: {
+            song: this.song,
+            data: this.data
+          }
+        };
+        console.log(navigationExtras);
+        console.log("New nav extras ^^");
+        this.router.navigate(['log-success'], navigationExtras);
+  }
+
   ngOnInit() {
   }
 
