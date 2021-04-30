@@ -16,9 +16,15 @@ export class LogSuccessPage implements OnInit {
       if (this.router.getCurrentNavigation().extras.state) {
         this.data = this.router.getCurrentNavigation().extras.state.data;
         this.song = this.router.getCurrentNavigation().extras.state.song;
+        var obj = { artist: this.data, song: this.song, date: this.currentDate, uid: 1  };
         console.log(this.currentDate);
         console.log(this.data);
         console.log(this.song);
+        var link = 'https://connormcd.com/loge/loge_submit.php'; 
+        http.post(link, obj);
+        /*.then(function (res){
+            $scope.response = res.data;
+        });*/
         //console.log("^^data success");
       } else {
         console.log(this.router.getCurrentNavigation().extras.state);
