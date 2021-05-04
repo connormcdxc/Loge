@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class LogSuccessPage implements OnInit {
   data: any;
   song: any;
+  response:any;
   currentDate = new Date();
   constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) {
     this.route.queryParams.subscribe(params => {
@@ -20,14 +21,23 @@ export class LogSuccessPage implements OnInit {
         console.log(this.currentDate);
         console.log(this.data);
         console.log(this.song);
-        var link = 'https://connormcd.com/loge/loge_submit.php'; 
-        http.post(link, obj);
+        var link = 'https://connormcd.com/loge/loge_submit.php';
+        this.http.post<any>(link, obj).subscribe({
+        next: data => {
+            this.response = data;
+        },
+        error: error => {
+            this.response = error.message;
+            console.error('There was an error!', error);
+        }
+    });
+
         /*.then(function (res){
             $scope.response = res.data;
         });*/
         //console.log("^^data success");
       } else {
-        console.log(this.router.getCurrentNavigation().extras.state);
+        console.log("extra no");
       }
     });
   }
