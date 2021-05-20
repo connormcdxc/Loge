@@ -21,7 +21,7 @@ export class LogSuccessPage implements OnInit {
         console.log(this.currentDate);
         console.log(this.data);
         console.log(this.song);
-        var link = 'https://connormcd.com/loge/loge_submit.php';
+        var link = 'http://connormcd.com/loge/loge_submit.php';
         this.http.post<any>(link, obj).subscribe({
         next: data => {
             this.response = data;
